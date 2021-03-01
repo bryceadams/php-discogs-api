@@ -524,6 +524,23 @@ return [
                 ]
             ]
         ],
+        'deleteWant' => [
+            'httpMethod' => 'DELETE',
+            'uri' => 'users/{username}/wants/{release_id}',
+            'summary' => 'Delete a user\'s want.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ]
         ]
     ],
     'models' => [
