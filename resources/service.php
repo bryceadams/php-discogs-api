@@ -500,6 +500,30 @@ return [
                     'required' => false
                 ]
             ]
+        ],
+        'addWant' => [
+            'httpMethod' => 'PUT',
+            'uri' => 'users/{username}/wants/{release_id}',
+            'summary' => 'Add or update a user\'s want.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'notes' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ]
+            ]
+        ],
         ]
     ],
     'models' => [
