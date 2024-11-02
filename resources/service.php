@@ -607,6 +607,69 @@ return [
                 ]
             ]
         ],
+        'getWants' => [
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}/wants',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'page' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ]
+            ]
+        ],
+        'addWant' => [
+            'httpMethod' => 'PUT',
+            'uri' => 'users/{username}/wants/{release_id}',
+            'summary' => 'Add or update a user\'s want.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'notes' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ]
+            ]
+        ],
+        'deleteWant' => [
+            'httpMethod' => 'DELETE',
+            'uri' => 'users/{username}/wants/{release_id}',
+            'summary' => 'Delete a user\'s want.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ],
+        ],
         'getCollectionFolder' => [
             'httpMethod' => 'GET',
             'uri' => 'users/{username}/collection/folders/{folder_id}',
