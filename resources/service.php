@@ -629,6 +629,29 @@ return [
                 ]
             ]
         ],
+        'addCollection' => [
+            'httpMethod' => 'POST',
+            'uri' => 'users/{username}/collection/folders/{folder_id}/releases/{release_id}',
+            'summary' => 'Add or update a user\'s collection.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'folder_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true,
+                ]
+            ]
+        ],
         'addWant' => [
             'httpMethod' => 'PUT',
             'uri' => 'users/{username}/wants/{release_id}',
