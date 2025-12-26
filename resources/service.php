@@ -435,6 +435,33 @@ return [
                 ]
             ]
         ],
+        'getPriceSuggestions' => [
+            'httpMethod' => 'GET',
+            'uri' => 'marketplace/price_suggestions/{release_id}',
+            'summary' => 'Get price suggestions for a release in the Marketplace.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
+        'getReleaseStatistics' => [
+            'httpMethod' => 'GET',
+            'uri' => 'marketplace/stats/{release_id}?curr_abbr=USD',
+            'summary' => 'Get Marketplace statistics for a release.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
+
         'createListing' => [
             'httpMethod' => 'POST',
             'uri' => '/marketplace/listings',
